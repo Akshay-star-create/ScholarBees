@@ -6,7 +6,7 @@
       <class name="com.qa.testcases.SearchPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="invalidKeywordTest"/>
+          <include name="BlankSearchFieldTest"/>
         </methods>
       </class> <!-- com.qa.testcases.SearchPageTest -->
     </classes>

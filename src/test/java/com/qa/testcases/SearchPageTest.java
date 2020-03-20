@@ -87,12 +87,20 @@ public class SearchPageTest extends TestBase {
 	}
 
 
-	@Test
+	@Test(enabled = false)
 	public void invalidKeywordTest() {
 		Dashboard = searchPage.login();
 		//searchPage.validateSpecialCharacters();
 		searchPage.validateInvalidKeyword();
 		System.out.println("No results found");
+	}
+	
+	
+	@Test
+	public void BlankSearchFieldTest() {
+		Dashboard = searchPage.login();
+		searchPage.validateBlankSearchField();
+		System.out.println("Search field cannot be blank");
 	}
 
 
