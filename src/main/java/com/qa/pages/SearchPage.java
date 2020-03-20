@@ -134,6 +134,7 @@ public class SearchPage extends TestBase {
 
 		Search.click();
 		Search.sendKeys("Biology");
+		
 
 		//WebDriverWait wait1 = new WebDriverWait(driver,20);
 		//KeyboardEnter = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class ='dropdown-item ng-trigger ng-trigger-typeaheadAnimation ng-tns-c12-4 ng-star-inserted']")));
