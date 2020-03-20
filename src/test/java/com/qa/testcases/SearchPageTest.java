@@ -30,7 +30,7 @@ public class SearchPageTest extends TestBase {
 
 
 
-	
+
 	@BeforeTest
 	public void setUp() throws IOException {
 
@@ -73,7 +73,7 @@ public class SearchPageTest extends TestBase {
 
 	}
 
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void keyboardTest() throws InterruptedException, AWTException {
 		Dashboard = searchPage.login();
 
@@ -84,6 +84,15 @@ public class SearchPageTest extends TestBase {
 			e.printStackTrace();
 		}
 
+	}
+
+
+	@Test
+	public void invalidKeywordTest() {
+		Dashboard = searchPage.login();
+		//searchPage.validateSpecialCharacters();
+		searchPage.validateInvalidKeyword();
+		System.out.println("No results found");
 	}
 
 

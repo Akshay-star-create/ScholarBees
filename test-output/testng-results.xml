@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-03-20T02:28:09 GMT-04:00" name="Default suite" finished-at="2020-03-20T02:28:18 GMT-04:00" duration-ms="9298">
+  <suite started-at="2020-03-20T04:06:07 GMT-04:00" name="Default suite" finished-at="2020-03-20T04:06:16 GMT-04:00" duration-ms="9152">
     <groups>
     </groups>
-    <test started-at="2020-03-20T02:28:09 GMT-04:00" name="Default test" finished-at="2020-03-20T02:28:18 GMT-04:00" duration-ms="9298">
+    <test started-at="2020-03-20T04:06:07 GMT-04:00" name="Default test" finished-at="2020-03-20T04:06:16 GMT-04:00" duration-ms="9152">
       <class name="com.qa.testcases.SearchPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.testcases.SearchPageTest@48524010]" started-at="2020-03-20T02:28:09 GMT-04:00" name="setUp" finished-at="2020-03-20T02:28:15 GMT-04:00" duration-ms="6748" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.testcases.SearchPageTest@4b168fa9]" started-at="2020-03-20T04:06:07 GMT-04:00" name="setUp" finished-at="2020-03-20T04:06:14 GMT-04:00" duration-ms="6834" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="keyboardTest()[pri:1, instance:com.qa.testcases.SearchPageTest@48524010]" started-at="2020-03-20T02:28:15 GMT-04:00" name="keyboardTest" finished-at="2020-03-20T02:28:18 GMT-04:00" duration-ms="2532" status="PASS">
+        <test-method signature="invalidKeywordTest()[pri:0, instance:com.qa.testcases.SearchPageTest@4b168fa9]" started-at="2020-03-20T04:06:14 GMT-04:00" name="invalidKeywordTest" finished-at="2020-03-20T04:06:16 GMT-04:00" duration-ms="2303" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- keyboardTest -->
+        </test-method> <!-- invalidKeywordTest -->
       </class> <!-- com.qa.testcases.SearchPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

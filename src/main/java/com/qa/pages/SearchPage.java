@@ -109,6 +109,8 @@ public class SearchPage extends TestBase {
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(Search).perform();
+		WebDriverWait wait = new WebDriverWait(driver,20);
+		Search = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[placeholder='Search ...']")));
 		Search.click();
 		Search.sendKeys("*/");
 		Submit.click();
@@ -141,6 +143,17 @@ public class SearchPage extends TestBase {
 		//Thread.sleep(20000);
 		
 		actions.sendKeys(Keys.ENTER).build().perform();
+	}
+	
+	public void validateInvalidKeyword() {
+
+		Actions actions = new Actions(driver);
+		actions.moveToElement(Search).perform();
+		WebDriverWait wait = new WebDriverWait(driver,20);
+		Search = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[placeholder='Search ...']")));
+		Search.click();
+		Search.sendKeys("anz");
+		Submit.click();
 	}
 
 
