@@ -2,12 +2,20 @@ package com.qa.testcases;
 
 
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+
+
+import org.testng.Assert;
+
+
 
 import java.awt.AWTException;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriverException;
-import org.testng.Assert;
+
 
 import org.testng.annotations.BeforeTest;
 
@@ -31,6 +39,9 @@ public class SearchPageTest extends TestBase {
 
 
 
+
+	
+	@BeforeMethod
 	@BeforeTest
 	public void setUp() throws IOException {
 
@@ -43,15 +54,15 @@ public class SearchPageTest extends TestBase {
 
 
 
-	@Test(enabled = false)
+	@Test(priority = 1)
 	public void searchFieldTest() {
 
 		Dashboard = searchPage.login();
 		searchPage.ValidateLogin();
 		boolean Search = searchPage.validateSearchFieldVisiblity();
-		Assert.assertTrue(Search);
+		AssertJUnit.assertTrue(Search);
 		boolean SearchPlaceholder = searchPage.validateSearchFieldPlaceholderVisiblity();
-		Assert.assertTrue(SearchPlaceholder);
+		AssertJUnit.assertTrue(SearchPlaceholder);
 		searchPage.validatePlaceholderDisappear();
 		System.out.println("Search field placeholder disappears");
 		System.out.println("Search Field is visible");
@@ -63,7 +74,7 @@ public class SearchPageTest extends TestBase {
 	}
 
 
-	@Test(enabled = false)
+	@Test(priority = 2)
 	public void autoSuggestionsTest() {
 
 		Dashboard = searchPage.login();
@@ -73,7 +84,7 @@ public class SearchPageTest extends TestBase {
 
 	}
 
-	@Test(enabled = false)
+	@Test(priority = 3)
 	public void keyboardTest() throws InterruptedException, AWTException {
 		Dashboard = searchPage.login();
 
@@ -87,7 +98,7 @@ public class SearchPageTest extends TestBase {
 	}
 
 
-	@Test(enabled = false)
+	@Test(priority = 4)
 	public void invalidKeywordTest() {
 		Dashboard = searchPage.login();
 		//searchPage.validateSpecialCharacters();
@@ -96,7 +107,7 @@ public class SearchPageTest extends TestBase {
 	}
 	
 	
-	@Test
+	@Test(priority = 5)
 	public void BlankSearchFieldTest() {
 		Dashboard = searchPage.login();
 		searchPage.validateBlankSearchField();

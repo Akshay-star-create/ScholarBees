@@ -166,6 +166,18 @@ public class SearchPage extends TestBase {
 		//Search.sendKeys("");
 		Submit.click();
 	}
+	
+	
+	public void validateError() {
+		
+		Actions actions = new Actions(driver);
+		actions.moveToElement(Search).perform();
+		WebDriverWait wait = new WebDriverWait(driver,20);
+		Search = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[placeholder='Search ...']")));
+		Search.click();
+		Search.sendKeys("%");
+		Submit.click();
+	}
 
 
 	// This will select the checkbox

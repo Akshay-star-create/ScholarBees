@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.testcases.SearchPageTest">
+      <class name="com.qa.testcases.SearchPageNegativeTest">
         <methods>
           <include name="setUp"/>
-          <include name="BlankSearchFieldTest"/>
+          <include name="ErrorTest"/>
         </methods>
-      </class> <!-- com.qa.testcases.SearchPageTest -->
+      </class> <!-- com.qa.testcases.SearchPageNegativeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

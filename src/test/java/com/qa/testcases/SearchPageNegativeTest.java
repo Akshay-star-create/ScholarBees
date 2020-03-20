@@ -1,10 +1,15 @@
 package com.qa.testcases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
+
 import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+
 
 import com.qa.pages.LoginPage;
 import com.qa.pages.SearchPage;
@@ -24,6 +29,9 @@ public class SearchPageNegativeTest extends TestBase {
 	}
 
 
+	
+	
+	@BeforeMethod
 	@BeforeTest
 	public void setUp() throws IOException {
 
@@ -46,6 +54,18 @@ public class SearchPageNegativeTest extends TestBase {
 		searchPage.validateSpecialCharacters();
 		System.out.println("Special characters are not allowed in search field");
 
+	}
+	
+	
+	@Test(priority = 2)
+	
+	public void ErrorTest() {
+		
+		Dashboard = searchPage.login();
+		searchPage.validateError();
+		System.out.println("404 Error do not displayed");
+		
+		
 	}
 
 
