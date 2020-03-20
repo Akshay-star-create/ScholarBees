@@ -45,6 +45,9 @@ public class SearchPage extends TestBase {
 
 	@FindBy(xpath = "(//button[@class = 'dropdown-item ng-trigger ng-trigger-typeaheadAnimation ng-tns-c12-6 ng-star-inserted'])[2]")
 	WebElement KeyboardEnter;
+	
+	@FindBy(xpath = "//*[text()='View Profile'])[1]")
+	WebElement NavigationResultCheck;
 
 
 	// Initializing the page objects
@@ -177,6 +180,18 @@ public class SearchPage extends TestBase {
 		Search.click();
 		Search.sendKeys("%");
 		Submit.click();
+	}
+	
+	public void validateNavigation() {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(Search).perform();
+		Search.click();
+		Search.sendKeys("GRE");
+		Submit.click();
+		WebDriverWait wait = new WebDriverWait(driver,20);
+		NavigationResultCheck = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='View Profile'])[1]")));
+		NavigationResultCheck.click();
+		
 	}
 
 

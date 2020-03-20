@@ -2,21 +2,13 @@ package com.qa.testcases;
 
 
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
-
-
-import org.testng.Assert;
-
-
 
 import java.awt.AWTException;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriverException;
-
-
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 
@@ -40,8 +32,8 @@ public class SearchPageTest extends TestBase {
 
 
 
-	
-	@BeforeMethod
+
+
 	@BeforeTest
 	public void setUp() throws IOException {
 
@@ -60,9 +52,9 @@ public class SearchPageTest extends TestBase {
 		Dashboard = searchPage.login();
 		searchPage.ValidateLogin();
 		boolean Search = searchPage.validateSearchFieldVisiblity();
-		AssertJUnit.assertTrue(Search);
+		Assert.assertTrue(Search);
 		boolean SearchPlaceholder = searchPage.validateSearchFieldPlaceholderVisiblity();
-		AssertJUnit.assertTrue(SearchPlaceholder);
+		Assert.assertTrue(SearchPlaceholder);
 		searchPage.validatePlaceholderDisappear();
 		System.out.println("Search field placeholder disappears");
 		System.out.println("Search Field is visible");
@@ -105,23 +97,41 @@ public class SearchPageTest extends TestBase {
 		searchPage.validateInvalidKeyword();
 		System.out.println("No results found");
 	}
-	
-	
+
+
 	@Test(priority = 5)
 	public void BlankSearchFieldTest() {
-		Dashboard = searchPage.login();
-		searchPage.validateBlankSearchField();
-		System.out.println("Search field cannot be blank");
+		try {
+			Dashboard = searchPage.login();
+			searchPage.validateBlankSearchField();
+			System.out.println("Search field cannot be blank");
+
+		} catch (WebDriverException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	@Test(priority = 6)
+	public void validateNavigationTest() {
+		try {
+			Dashboard = searchPage.login();
+			searchPage.validateNavigation();
+		} catch (WebDriverException e) {
+			e.printStackTrace();
+		}
 	}
 
 
 
-	/*@AfterTest
+
+	@AfterTest
 	public void driverQuitter() {
 		driver.quit();
 
-	}*/
+	}
 }
+
 
 
 
